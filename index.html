@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор настройки pb share</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор настройки pb share для изменения маржи</h1>
+        <form id="calculator-form">
+            <label for="current-income">Доход от рекламодателя за юзера:</label>
+            <input type="number" id="current-income" step="0.001" placeholder="0.051" required>
+
+            <label for="current-expense">Расходы на паб за юзера:</label>
+            <input type="number" id="current-expense" step="0.001" placeholder="0.04" required>
+
+            <p>Выберите способ расчета:</p>
+            <input type="radio" id="increase-margin" name="method" value="1" checked>
+            <label for="increase-margin">Увеличить маржу на заданный процент</label><br>
+            <input type="radio" id="target-margin" name="method" value="2">
+            <label for="target-margin">Достичь целевой маржи</label><br>
+
+            <div id="increase-percentage-container">
+                <label for="increase-percentage">Процент увеличения маржи:</label>
+                <input type="number" id="increase-percentage" placeholder="20">
+            </div>
+
+            <div id="target-margin-container" style="display: none;">
+                <label for="target-margin-value">Целевая маржа:</label>
+                <input type="number" id="target-margin-value" step="0.01" placeholder="0.7">
+            </div>
+
+            <button type="submit">Рассчитать</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
